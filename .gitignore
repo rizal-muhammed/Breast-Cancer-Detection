@@ -160,5 +160,7 @@ cython_debug/
 #.idea/
 
 # artifacts and secrets
-artifacts
+artifacts/*
+secrets/*
 secrets
+artifacts
