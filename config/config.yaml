@@ -1,0 +1,8 @@
+artifacts_root : artifacts
+
+data_ingestion:
+  root_dir: artifacts/data_ingestion
+  data_id: 17
+  destination_folder: artifacts/data_ingestion/data
+  filename: breast_cancer_wisconsin.csv
+  miscellaneous_folder: artifacts/data_ingestion/miscellaneous
