@@ -10,6 +10,8 @@ class DataIngestion:
     def __init__(self, config:DataIngestionConfig) -> None:
         self.config = config
 
+        common.create_directories([config.root_dir])
+
     def data_ingestion(self, ):
 
         # fetch dataset 

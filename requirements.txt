@@ -2,4 +2,8 @@ notebook
 numpy
 pandas
 scikit-learn
+python-box
+PyYAML
+ensure
+ucimlrepo
 -e .

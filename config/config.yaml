@@ -6,3 +6,14 @@ data_ingestion:
   destination_folder: artifacts/data_ingestion/data
   filename: breast_cancer_wisconsin.csv
   miscellaneous_folder: artifacts/data_ingestion/miscellaneous
+
+data_validation_training:
+  root_dir: artifacts/data_validation_training/training_raw_files_validated
+  good_raw: artifacts/data_validation_training/training_raw_files_validated/good_raw
+  bad_raw: artifacts/data_validation_training/training_raw_files_validated/bad_raw
+  filename_regex: breast_cancer_wisconsin.csv
+  metadata_filename: metadata.txt
+  description_filename: variables.txt
+  training_source_dir: artifacts/data_ingestion/data
+  number_of_columns: 31
+
