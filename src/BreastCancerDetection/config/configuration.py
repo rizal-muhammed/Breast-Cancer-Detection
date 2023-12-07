@@ -1,7 +1,10 @@
 from pathlib import Path
 from BreastCancerDetection.constants import CONFIG_FILE_PATH, PARAMS_FILE_PATH, SECRETS_FILE_PATH
 from BreastCancerDetection.utils import common
-from BreastCancerDetection.entity import (DataIngestionConfig, DataValidationTrainingConfig)
+from BreastCancerDetection.entity import (DataIngestionConfig, 
+                                        DataValidationTrainingConfig,
+                                        DataTransformationTrainingConfig,
+                                        DatabaseOperationsCredentials)
 
 
 class ConfigurationManager:
@@ -42,3 +45,24 @@ class ConfigurationManager:
         )
 
         return data_validation_training_config
+    
+    def get_data_transformation_training_config(self, ) -> DataTransformationTrainingConfig:
+        config = self.config.data_transformation_training
+
+        data_transformation_training_config = DataTransformationTrainingConfig(
+            good_raw = config.good_raw, 
+            bad_raw = config.bad_raw, 
+            archive_bad_raw = config.archive_bad_raw, 
+            column_names = config.column_names)
+        
+        return data_transformation_training_config
+    
+    def get_database_operations_credentials(self) -> DatabaseOperationsCredentials:
+        credentials = self.credentials.database_credentials
+
+        db_ops_credentials = DatabaseOperationsCredentials(
+            ASTRA_TOKEN_PATH = credentials.ASTRA_TOKEN_PATH,
+            ASTRA_DB_SECURE_BUNDLE_PATH = credentials.ASTRA_DB_SECURE_BUNDLE_PATH,
+        )
+
+        return db_ops_credentials

@@ -162,3 +162,4 @@ cython_debug/
 # artifacts and secrets
 secrets/*
 artifacts/*
+connect_database.py

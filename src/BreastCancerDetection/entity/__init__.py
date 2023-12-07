@@ -20,4 +20,15 @@ class DataValidationTrainingConfig:
     training_source_dir: Path
     number_of_columns: int
 
+@dataclass(frozen=True)
+class DataTransformationTrainingConfig:
+    good_raw: Path
+    bad_raw: Path
+    archive_bad_raw: Path
+    column_names: list
+
+@dataclass(frozen=True)
+class DatabaseOperationsCredentials:
+    ASTRA_TOKEN_PATH: Path
+    ASTRA_DB_SECURE_BUNDLE_PATH: Path
 
