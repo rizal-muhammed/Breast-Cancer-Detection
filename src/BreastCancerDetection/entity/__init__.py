@@ -28,7 +28,20 @@ class DataTransformationTrainingConfig:
     column_names: list
 
 @dataclass(frozen=True)
-class DatabaseOperationsCredentials:
+class DataBaseOperationsTrainingConfig:
+    root_dir: Path
+    file_name: str
+    good_raw: Path
+    bad_raw: Path
+
+@dataclass(frozen=True)
+class DataBaseOperationsTrainingCredentials:
     ASTRA_TOKEN_PATH: Path
     ASTRA_DB_SECURE_BUNDLE_PATH: Path
 
+@dataclass(frozen=True)
+class DataBaseOperationsTrainingParams:
+    ASTRA_DB_KEYSPACE: str
+    db_name: str
+    table_name: str
+    column_names: dict

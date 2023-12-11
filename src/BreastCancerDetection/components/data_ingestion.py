@@ -29,7 +29,8 @@ class DataIngestion:
         
         breast_cancer_wisconsin_diagnostic_df.to_csv(
             os.path.join(self.config.destination_folder, self.config.filename),
-            index=False,
+            index=True,
+            index_label="index_column",
             header=True)
 
         miscellaneous_folder = self.config.miscellaneous_folder

@@ -1,1 +1,37 @@
-key: val
+database_insertion_training_params:
+  ASTRA_DB_KEYSPACE: "breast_cancer_detection_training"
+  db_name: "breast_cancer_detection"
+  table_name: "good_raw_data"
+  column_names: {'index_column': 'int',
+  'radius1': 'float',
+ 'texture1': 'float',
+ 'perimeter1': 'float',
+ 'area1': 'float',
+ 'smoothness1': 'float',
+ 'compactness1': 'float',
+ 'concavity1': 'float',
+ 'concave_points1': 'float',
+ 'symmetry1': 'float',
+ 'fractal_dimension1': 'float',
+ 'radius2': 'float',
+ 'texture2': 'float',
+ 'perimeter2': 'float',
+ 'area2': 'float',
+ 'smoothness2': 'float',
+ 'compactness2': 'float',
+ 'concavity2': 'float',
+ 'concave_points2': 'float',
+ 'symmetry2': 'float',
+ 'fractal_dimension2': 'float',
+ 'radius3': 'float',
+ 'texture3': 'float',
+ 'perimeter3': 'float',
+ 'area3': 'float',
+ 'smoothness3': 'float',
+ 'compactness3': 'float',
+ 'concavity3': 'float',
+ 'concave_points3': 'float',
+ 'symmetry3': 'float',
+ 'fractal_dimension3': 'float',
+ 'diagnosis': 'varchar'
+  }

@@ -15,7 +15,7 @@ data_validation_training:
   metadata_filename: metadata.txt
   description_filename: variables.txt
   training_source_dir: artifacts/data_ingestion/data
-  number_of_columns: 31
+  number_of_columns: 32
 
 data_transformation_training:
   good_raw: artifacts/data_validation_training/training_raw_files_validated/good_raw
@@ -53,6 +53,10 @@ data_transformation_training:
  'fractal_dimension3',
  'Diagnosis']
 
-
+database_operations_training:
+  root_dir: artifacts/training_file_from_db
+  file_name: inputfile.csv
+  good_raw: artifacts/data_validation_training/training_raw_files_validated/good_raw
+  bad_raw: artifacts/data_validation_training/training_raw_files_validated/bad_raw
  
 

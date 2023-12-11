@@ -160,3 +160,43 @@ class DataTransformationTraining:
         except Exception as e:
             logger.exception(e)
             raise e
+    
+    def convert_column_names_to_lowercase(self):
+        """
+            This method renames the column names to lower case.
+
+            The recommended convention for cassandra database is to use column names with lower case letters. Therefore,
+            in order to avoid confusion, we're renaming column names that have any upper case letters to all lower case letters.
+
+            Parameters
+            ----------
+            None
+
+            Returns
+            -------
+            None
+
+            Raises
+            ------
+            Exception
+
+            Example(s)
+            ------
+            Column name 'Diagnosis' is converted to 'diagnosis'.
+        
+        """
+        try:
+            logger.info(f""">>>>>>> Converting all column names to lower case... <<<<<<<""")
+
+            all_items = os.listdir(self.config.good_raw)  # all items in the directory
+            only_files = [item for item in all_items if os.path.isfile(os.path.join(self.config.good_raw, item)) and item != ".DS_Store"]
+
+            for file in only_files:
+                df = pd.read_csv(os.path.join(self.config.good_raw, file))
+                df.columns = df.columns.str.lower()
+
+                df.to_csv(os.path.join(self.config.good_raw, file), index=False, header=True)
+        except Exception as e:
+            logger.exception(f"""Error while convertion of column names to lower case. 
+                                Error message: {str(e)}""")
+            raise e

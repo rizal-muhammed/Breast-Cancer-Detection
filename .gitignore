@@ -163,3 +163,4 @@ cython_debug/
 secrets/*
 artifacts/*
 connect_database.py
+.DS_Store

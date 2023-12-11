@@ -4,7 +4,9 @@ from BreastCancerDetection.utils import common
 from BreastCancerDetection.entity import (DataIngestionConfig, 
                                         DataValidationTrainingConfig,
                                         DataTransformationTrainingConfig,
-                                        DatabaseOperationsCredentials)
+                                        DataBaseOperationsTrainingConfig,
+                                        DataBaseOperationsTrainingCredentials,
+                                        DataBaseOperationsTrainingParams)
 
 
 class ConfigurationManager:
@@ -57,12 +59,37 @@ class ConfigurationManager:
         
         return data_transformation_training_config
     
-    def get_database_operations_credentials(self) -> DatabaseOperationsCredentials:
+    def get_data_base_operations_trainig_config(self, ) -> DataBaseOperationsTrainingConfig:
+        config = self.config.database_operations_training
+
+        data_base_operations_training_config = DataBaseOperationsTrainingConfig(
+            root_dir = config.root_dir,
+            file_name = config.file_name,
+            good_raw = config.good_raw,
+            bad_raw = config.bad_raw,
+        )
+
+        return data_base_operations_training_config
+
+    def get_data_base_operations_training_credentials(self, ) -> DataBaseOperationsTrainingCredentials:
         credentials = self.credentials.database_credentials
 
-        db_ops_credentials = DatabaseOperationsCredentials(
+        data_base_operations_training_credentials = DataBaseOperationsTrainingCredentials(
             ASTRA_TOKEN_PATH = credentials.ASTRA_TOKEN_PATH,
             ASTRA_DB_SECURE_BUNDLE_PATH = credentials.ASTRA_DB_SECURE_BUNDLE_PATH,
         )
 
-        return db_ops_credentials
+        return data_base_operations_training_credentials
+    
+    def get_data_base_operations_training_params(self, ) -> DataBaseOperationsTrainingParams:
+        db_params = self.params.database_insertion_training_params
+
+        data_base_operations_training_params = DataBaseOperationsTrainingParams(
+            ASTRA_DB_KEYSPACE = db_params.ASTRA_DB_KEYSPACE,
+            db_name = db_params.db_name,
+            table_name = db_params.table_name,
+            column_names = db_params.column_names
+        )
+
+        return data_base_operations_training_params
+    
