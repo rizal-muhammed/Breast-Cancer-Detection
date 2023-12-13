@@ -6,7 +6,9 @@ from BreastCancerDetection.entity import (DataIngestionConfig,
                                         DataTransformationTrainingConfig,
                                         DataBaseOperationsTrainingConfig,
                                         DataBaseOperationsTrainingCredentials,
-                                        DataBaseOperationsTrainingParams)
+                                        DataBaseOperationsTrainingParams,
+                                        DataPreProcessingTrainingConfig,
+                                        DataPreProcessingTrainingParams)
 
 
 class ConfigurationManager:
@@ -92,4 +94,28 @@ class ConfigurationManager:
         )
 
         return data_base_operations_training_params
+
+    def get_data_preprocessing_training_config(self) -> DataPreProcessingTrainingConfig:
+        data_preprocessing_training = self.config.data_preprocessing_training
+
+        data_preprocessing_training_config = DataPreProcessingTrainingConfig(
+            root_dir=data_preprocessing_training.root_dir,
+            input_file_path=Path(data_preprocessing_training.input_file_path),
+            correlation_dir=data_preprocessing_training.correlation_dir,
+            preprocessed_input_data_dir=data_preprocessing_training.preprocessed_input_data_dir,
+            test_set_dir=Path(data_preprocessing_training.test_set_dir),
+        )
+
+        return data_preprocessing_training_config
+
+    def get_data_preprocessing_training_params(self) -> DataPreProcessingTrainingParams:
+        data_preprocessing_training = self.params.data_preprocessing_training_params
+
+        data_preprocessing_training_params = DataPreProcessingTrainingParams(
+            label_column_name=data_preprocessing_training.label_column_name,
+            row_threshold=data_preprocessing_training.row_threshold,
+            test_size=data_preprocessing_training.test_size,
+        )
+
+        return data_preprocessing_training_params
     

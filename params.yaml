@@ -35,3 +35,8 @@ database_insertion_training_params:
  'fractal_dimension3': 'float',
  'diagnosis': 'varchar'
   }
+
+data_preprocessing_training_params:
+  label_column_name: diagnosis
+  row_threshold: 5000
+  test_size: 0.2

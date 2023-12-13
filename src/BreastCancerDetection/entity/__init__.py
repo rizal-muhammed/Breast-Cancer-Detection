@@ -45,3 +45,17 @@ class DataBaseOperationsTrainingParams:
     db_name: str
     table_name: str
     column_names: dict
+
+@dataclass(frozen=True)
+class DataPreProcessingTrainingConfig:
+    root_dir: Path
+    input_file_path: Path
+    correlation_dir: Path
+    preprocessed_input_data_dir: Path
+    test_set_dir: Path
+
+@dataclass(frozen=True)
+class DataPreProcessingTrainingParams:
+    label_column_name: str
+    row_threshold: int
+    test_size: float
