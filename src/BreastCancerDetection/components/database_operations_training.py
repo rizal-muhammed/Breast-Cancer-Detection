@@ -245,6 +245,8 @@ class DatabaseOperations:
                                 params = tuple(row)
 
                                 self.session.execute(insert_query, params)
+                                if index % 100 == 0:
+                                    logger.info(f"Inserted {index} rows into the database.")
                         else:
                             logger.error(f"Could not insert into the table {str(self.params.table_name)}")
                             shutil.move(os.path.join(self.config.good_raw, file), self.config.bad_raw)
