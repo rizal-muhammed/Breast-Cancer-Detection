@@ -8,7 +8,9 @@ from BreastCancerDetection.entity import (DataIngestionConfig,
                                         DataBaseOperationsTrainingCredentials,
                                         DataBaseOperationsTrainingParams,
                                         DataPreProcessingTrainingConfig,
-                                        DataPreProcessingTrainingParams)
+                                        DataPreProcessingTrainingParams,
+                                        ModelTrainingConfig,
+                                        ModelTrainingParams)
 
 
 class ConfigurationManager:
@@ -119,3 +121,25 @@ class ConfigurationManager:
 
         return data_preprocessing_training_params
     
+    def get_model_training_config(self) -> ModelTrainingConfig:
+        model_training = self.config.model_training
+
+        model_training_config = ModelTrainingConfig(
+            root_dir=Path(model_training.root_dir),
+            models_dir=Path(model_training.models_dir),
+            preprocessed_train_X=model_training.preprocessed_train_X,
+            preprocessed_val_X=model_training.preprocessed_val_X,
+            preprocessed_train_y=model_training.preprocessed_train_y,
+            preprocessed_val_y=model_training.preprocessed_val_y,
+        )
+
+        return model_training_config
+    
+    def get_model_training_params(self) -> ModelTrainingParams:
+        model_training = self.params.model_training_params
+
+        model_training_params = ModelTrainingParams(
+            linear_regression_params=model_training.linear_regression_params,
+        )
+
+        return model_training_params

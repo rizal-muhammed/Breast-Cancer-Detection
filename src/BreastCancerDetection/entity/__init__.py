@@ -59,3 +59,17 @@ class DataPreProcessingTrainingParams:
     label_column_name: str
     row_threshold: int
     test_size: float
+
+
+@dataclass(frozen=True)
+class ModelTrainingConfig:
+    root_dir: Path
+    models_dir: Path
+    preprocessed_train_X: str
+    preprocessed_train_y: str
+    preprocessed_val_X: str
+    preprocessed_val_y: str
+
+@dataclass(frozen=True)
+class ModelTrainingParams:
+    linear_regression_params: dict

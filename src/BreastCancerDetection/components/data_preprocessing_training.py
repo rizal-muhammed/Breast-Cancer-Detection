@@ -24,7 +24,7 @@ class DataPreProcessingTraining:
 
         common.create_directories([self.config.root_dir])
     
-    def load_input_data_for_training(self, ):
+    def load_input_data_for_training(self):
         """
             This method loads input data for training and returns the data as pandas DataFrame type.
 
@@ -507,7 +507,7 @@ class DataPreProcessingTraining:
             y_train.to_csv(os.path.join(self.config.preprocessed_input_data_dir, "preprocessed_train_y.csv"),
                       index=False,
                       header=True)
-            y_train.to_csv(os.path.join(self.config.preprocessed_input_data_dir, "preprocessed_val_y.csv"),
+            y_val.to_csv(os.path.join(self.config.preprocessed_input_data_dir, "preprocessed_val_y.csv"),
                       index=False,
                       header=True)
             

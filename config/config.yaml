@@ -65,5 +65,13 @@ data_preprocessing_training:
   correlation_dir: artifacts/preprocessed_data/correlation_matrix
   preprocessed_input_data_dir: artifacts/preprocessed_data/preprocessed_input
   test_set_dir: artifacts/preprocessed_data/test_set
- 
+
+model_training:
+  root_dir: artifacts/model_training
+  models_dir: artifacts/model_training/models
+  preprocessed_train_X: preprocessed_train_X.csv
+  preprocessed_train_y: preprocessed_train_y.csv
+  preprocessed_val_X: preprocessed_val_X.csv
+  preprocessed_val_y: preprocessed_val_y.csv
+
 
