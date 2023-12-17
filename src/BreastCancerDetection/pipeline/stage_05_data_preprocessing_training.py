@@ -39,19 +39,19 @@ class DataPreProcessingTrainingPipeline:
         # separate features and label
         X,y = data_preprocessing_training.separate_label_feature(train_set_modified)
 
-        X_train, X_val, y_train, y_val = data_preprocessing_training.train_val_split(X, y)
+        # X_train, X_val, y_train, y_val = data_preprocessing_training.train_val_split(X, y)
 
         # dealing with missing values
-        is_null_present = data_preprocessing_training.is_null_present(X_train)
+        is_null_present = data_preprocessing_training.is_null_present(X)
         if is_null_present:
-            X_train = data_preprocessing_training.impute_missing_values(X_train)
-            X_val = data_preprocessing_training.impute_missing_values_validation_set(X_val)
+            X = data_preprocessing_training.impute_missing_values(X)
+            # X_val = data_preprocessing_training.impute_missing_values_validation_set(X_val)
 
         # scaling
-        X_train_scaled = data_preprocessing_training.training_std_scaling(X_train)
-        X_val_scaled = data_preprocessing_training.validation_std_scaling(X_val)
+        X_scaled = data_preprocessing_training.training_std_scaling(X)
+        # X_val_scaled = data_preprocessing_training.validation_std_scaling(X_val)
 
         # saving pre processed data for training
-        data_preprocessing_training.save_data(X_train_scaled, X_val_scaled, y_train, y_val)
+        data_preprocessing_training.save_data(X_scaled, y)
 
         

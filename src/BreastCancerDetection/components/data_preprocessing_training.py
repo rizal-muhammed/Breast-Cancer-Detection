@@ -464,21 +464,17 @@ class DataPreProcessingTraining:
             raise e
     
     @ensure_annotations
-    def save_data(self, X_train:pd.DataFrame, X_val:pd.DataFrame, y_train:pd.DataFrame, y_val:pd.DataFrame):
+    def save_data(self, X:pd.DataFrame, y:pd.DataFrame):
         """
             This method saves the data at the end of pre-processing step at specified directory,
             so that we can retrieve them for model training.
 
             Parameters
             ----------
-            X_train : pandas DataFrame type
+            X : pandas DataFrame type
                 input features in the form of pandas DataFrame
-            X_val : pandas DataFrame type
-                Validation set in the form of pandas DataFrame
-            y_train : pandas DataFrame type
-                Ground truth for training
-            y_val : pandas DataFrame
-                Ground truth for validation
+            y : pandas DataFrame
+                Ground truth for training in the form of pandas DataFrame
 
             Returns
             -------
@@ -499,18 +495,18 @@ class DataPreProcessingTraining:
             logger.info(f"Attempting saving pre-processed data into 'artifacts/preprocessed_data' directory...")
 
             common.create_directories([self.config.preprocessed_input_data_dir])
-            X_train.to_csv(os.path.join(self.config.preprocessed_input_data_dir, "preprocessed_train_X.csv"),
+            X.to_csv(os.path.join(self.config.preprocessed_input_data_dir, "preprocessed_train_X.csv"),
                       index=False,
                       header=True)
-            X_val.to_csv(os.path.join(self.config.preprocessed_input_data_dir, "preprocessed_val_X.csv"),
+            # X_val.to_csv(os.path.join(self.config.preprocessed_input_data_dir, "preprocessed_val_X.csv"),
+            #           index=False,
+            #           header=True)
+            y.to_csv(os.path.join(self.config.preprocessed_input_data_dir, "preprocessed_train_y.csv"),
                       index=False,
                       header=True)
-            y_train.to_csv(os.path.join(self.config.preprocessed_input_data_dir, "preprocessed_train_y.csv"),
-                      index=False,
-                      header=True)
-            y_val.to_csv(os.path.join(self.config.preprocessed_input_data_dir, "preprocessed_val_y.csv"),
-                      index=False,
-                      header=True)
+            # y_val.to_csv(os.path.join(self.config.preprocessed_input_data_dir, "preprocessed_val_y.csv"),
+            #           index=False,
+            #           header=True)
             
             logger.info(f"""Saving pre-processed data is successful.""")
 
