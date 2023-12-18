@@ -69,9 +69,12 @@ data_preprocessing_training:
 model_training:
   root_dir: artifacts/model_training
   models_dir: artifacts/model_training/models
-  preprocessed_train_X: preprocessed_train_X.csv
-  preprocessed_train_y: preprocessed_train_y.csv
-  preprocessed_val_X: preprocessed_val_X.csv
-  preprocessed_val_y: preprocessed_val_y.csv
+  path_to_preprocessed_train_X: artifacts/preprocessed_data/preprocessed_input/preprocessed_train_X.csv
+  path_to_preprocessed_train_y: artifacts/preprocessed_data/preprocessed_input/preprocessed_train_y.csv
+  best_models_dir: artifacts/model_training/best_models
+  final_model_dir: artifacts/model_training/final_model
+
+
+
 
 

@@ -1,5 +1,6 @@
 from dataclasses import dataclass
 from pathlib import Path
+import yaml
 
 @dataclass(frozen=True)
 class DataIngestionConfig:
@@ -65,11 +66,14 @@ class DataPreProcessingTrainingParams:
 class ModelTrainingConfig:
     root_dir: Path
     models_dir: Path
-    preprocessed_train_X: str
-    preprocessed_train_y: str
-    preprocessed_val_X: str
-    preprocessed_val_y: str
+    path_to_preprocessed_train_X: Path
+    path_to_preprocessed_train_y: Path
+    best_models_dir: Path
+    final_model_dir: Path
 
 @dataclass(frozen=True)
 class ModelTrainingParams:
+    cv: int
     linear_regression_params: dict
+    sgd_classifier_params: dict
+    random_forest_classifier_params: dict

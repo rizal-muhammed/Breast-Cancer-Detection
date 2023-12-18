@@ -10,6 +10,9 @@ from pathlib import Path
 from BreastCancerDetection.logging import logger
 
 
+def none_constructor(loader, node):
+    return None
+
 @ensure_annotations
 def read_yaml(path_to_yaml) -> ConfigBox:
     """
@@ -34,8 +37,10 @@ def read_yaml(path_to_yaml) -> ConfigBox:
     """
     try:
         path_to_yaml = Path(path_to_yaml)
+        yaml.add_constructor('tag:yaml.org,2002:null', none_constructor)
         with open(path_to_yaml) as yaml_file:
-            content = yaml.safe_load(yaml_file)
+            content = yaml.load(yaml_file, Loader=yaml.Loader)
+            # content = yaml.safe_load(yaml_file)
             logger.info(f"yaml file: {path_to_yaml} loaded successfully")
             return ConfigBox(content)
         

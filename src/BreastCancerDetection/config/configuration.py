@@ -127,10 +127,10 @@ class ConfigurationManager:
         model_training_config = ModelTrainingConfig(
             root_dir=Path(model_training.root_dir),
             models_dir=Path(model_training.models_dir),
-            preprocessed_train_X=model_training.preprocessed_train_X,
-            preprocessed_val_X=model_training.preprocessed_val_X,
-            preprocessed_train_y=model_training.preprocessed_train_y,
-            preprocessed_val_y=model_training.preprocessed_val_y,
+            path_to_preprocessed_train_X=model_training.path_to_preprocessed_train_X,
+            path_to_preprocessed_train_y=model_training.path_to_preprocessed_train_y,
+            best_models_dir=Path(model_training.best_models_dir),
+            final_model_dir=Path(model_training.final_model_dir),
         )
 
         return model_training_config
@@ -139,7 +139,10 @@ class ConfigurationManager:
         model_training = self.params.model_training_params
 
         model_training_params = ModelTrainingParams(
-            linear_regression_params=model_training.linear_regression_params,
+            cv=model_training.cv,
+            linear_regression_params=dict(model_training.linear_regression_params),
+            sgd_classifier_params=dict(model_training.sgd_classifier_params),
+            random_forest_classifier_params=dict(model_training.random_forest_classifier_params),
         )
 
         return model_training_params

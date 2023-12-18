@@ -4,7 +4,7 @@ from BreastCancerDetection.pipeline.stage_02_data_validation_training import Dat
 from BreastCancerDetection.pipeline.stage_03_data_transformation_training import DataTransformationTrainingPipeline
 from BreastCancerDetection.pipeline.stage_04_database_operations_training_pipeline import DatabaseOperationTrainingPipeline
 from BreastCancerDetection.pipeline.stage_05_data_preprocessing_training import DataPreProcessingTrainingPipeline
-
+from BreastCancerDetection.pipeline.stage_06_model_training_pipeline import ModelTrainingPipeline
 
 
 # STAGE_NAME = f"""Data Ingestion"""
@@ -47,11 +47,21 @@ from BreastCancerDetection.pipeline.stage_05_data_preprocessing_training import 
 #     logger.exception(e)
 #     raise e
 
-STAGE_NAME = f"""Data pre-prcessing Training"""
+# STAGE_NAME = f"""Data pre-prcessing Training"""
+# try:
+#     logger.info(f""">>>>>>> Stage {STAGE_NAME} started... <<<<<<<""")
+#     data_preprocessing_training = DataPreProcessingTrainingPipeline()
+#     data_preprocessing_training.main()
+#     logger.info(f""">>>>>>> Stage {STAGE_NAME} Completed... <<<<<<<\n\n""")
+# except Exception as e:
+#     logger.exception(e)
+#     raise e
+
+STAGE_NAME = f"""Model Training"""
 try:
     logger.info(f""">>>>>>> Stage {STAGE_NAME} started... <<<<<<<""")
-    data_preprocessing_training = DataPreProcessingTrainingPipeline()
-    data_preprocessing_training.main()
+    model_training = ModelTrainingPipeline()
+    model_training.main()
     logger.info(f""">>>>>>> Stage {STAGE_NAME} Completed... <<<<<<<\n\n""")
 except Exception as e:
     logger.exception(e)
