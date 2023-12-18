@@ -74,6 +74,16 @@ model_training:
   best_models_dir: artifacts/model_training/best_models
   final_model_dir: artifacts/model_training/final_model
 
+model_evaluation:
+  root_dir: artifacts/model_evaluation
+  final_model: artifacts/model_training/final_model/final_model.joblib
+  test_set_feautres: artifacts/preprocessed_data/test_set/test_set_features.csv
+  test_set_label: artifacts/preprocessed_data/test_set/test_set_label.csv
+  label_column_name: diagnosis
+  columns_with_zero_std_dev_path: artifacts/preprocessed_data/columns_with_zero_std_dev.pkl
+  knn_imputer_path: artifacts/preprocessed_data/knn_imputer.pkl
+  std_scaler_path: artifacts/preprocessed_data/std_scaler.pkl
+
 
 
 

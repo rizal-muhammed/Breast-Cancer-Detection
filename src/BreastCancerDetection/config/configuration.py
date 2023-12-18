@@ -10,7 +10,8 @@ from BreastCancerDetection.entity import (DataIngestionConfig,
                                         DataPreProcessingTrainingConfig,
                                         DataPreProcessingTrainingParams,
                                         ModelTrainingConfig,
-                                        ModelTrainingParams)
+                                        ModelTrainingParams,
+                                        ModelEvaluationConfig)
 
 
 class ConfigurationManager:
@@ -146,3 +147,19 @@ class ConfigurationManager:
         )
 
         return model_training_params
+    
+    def get_model_evaluation_config(self) -> ModelEvaluationConfig:
+        model_evaluation = self.config.model_evaluation
+
+        model_evaluation_config = ModelEvaluationConfig(
+            root_dir=Path(model_evaluation.root_dir),
+            final_model=Path(model_evaluation.final_model),
+            test_set_feautres=Path(model_evaluation.test_set_feautres),
+            test_set_label=Path(model_evaluation.test_set_label),
+            label_column_name=str(model_evaluation.label_column_name),
+            columns_with_zero_std_dev_path=Path(model_evaluation.columns_with_zero_std_dev_path),
+            knn_imputer_path=Path(model_evaluation.knn_imputer_path),
+            std_scaler_path=Path(model_evaluation.std_scaler_path),
+        )
+
+        return model_evaluation_config

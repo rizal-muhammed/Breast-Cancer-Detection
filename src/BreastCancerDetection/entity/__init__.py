@@ -77,3 +77,14 @@ class ModelTrainingParams:
     linear_regression_params: dict
     sgd_classifier_params: dict
     random_forest_classifier_params: dict
+
+@dataclass(frozen=True)
+class ModelEvaluationConfig:
+    root_dir: Path
+    final_model: Path
+    test_set_feautres: Path
+    test_set_label: Path
+    label_column_name: str
+    columns_with_zero_std_dev_path: Path
+    knn_imputer_path: Path
+    std_scaler_path: Path
