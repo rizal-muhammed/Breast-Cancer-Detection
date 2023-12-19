@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0"/>
+  <title>Starter Template - Materialize</title>
+
+  <!-- CSS  -->
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link href="./static/css/materialize.css" type="text/css" rel="stylesheet" media="screen,projection"/>
+  <link href="./static/css2/style.css" type="text/css" rel="stylesheet" media="screen,projection"/>
+</head>
+
+<body>
+  <!-- <nav class="light-blue lighten-1" role="navigation">
+    <div class="nav-wrapper container"><a id="logo-container" href="#" class="brand-logo">Logo</a>
+      <ul class="right hide-on-med-and-down">
+        <li><a href="#">Navbar Link</a></li>
+      </ul>
+
+      <ul id="nav-mobile" class="sidenav">
+        <li><a href="#">Navbar Link</a></li>
+      </ul>
+      <a href="#" data-target="nav-mobile" class="sidenav-trigger"><i class="material-icons">menu</i></a>
+    </div>
+  </nav> -->
+
+
+  <div class="section no-pad-bot" id="index-banner">
+    <div class="container">
+      <br><br>
+      <h1 class="header center orange-text">Breast Cancer Detection Wisconsin</h1>
+      <div class="row center">
+        <h5 class="header col s12 light">Prediction of breast cancer.
+        <br>
+        </h5>
+      </div>
+
+              <div class="row">
+    <form action='/predict' method="POST" class="col s12">
+      <div class="row">
+        <div class="input-field col s4">
+            <label for="id1"><b>area1</b></label>
+            <br>
+          <input   id="id1" name='area1'type="text" class="validate">
+        </div>
+
+        <div class="input-field col s4">
+          <label for="id2"><b>area2</b></label>
+            <br>
+          <input id="id2"  name="area2" type="text" class="validate">
+        </div>
+
+        <div class="input-field col s4">
+            <label for="id3"><b>area3</b></label>
+            <br>
+          <input id="id3" name="area3" type="text" class="validate">
+        </div>
+
+        <div class="input-field col s4">
+          <label for="id4"><b>compactness1</b></label>
+          <br>
+        <input   id="id4" name='compactness1'type="text" class="validate">
+      </div>
+
+      <div class="input-field col s4">
+        <label for="id5"><b>compactness2</b></label>
+          <br>
+        <input id="id5"  name="compactness2" type="text" class="validate">
+      </div>
+
+      <div class="input-field col s4">
+          <label for="id6"><b>compactness3</b></label>
+          <br>
+        <input id="id6" name="compactness3" type="text" class="validate">
+      </div>
+
+      <div class="input-field col s4">
+        <label for="id7"><b>concave_points1</b></label>
+        <br>
+      <input   id="id7" name='concave_points1'type="text" class="validate">
+      </div>
+
+      <div class="input-field col s4">
+        <label for="id8"><b>concave_points2</b></label>
+          <br>
+        <input id="id8"  name="concave_points2" type="text" class="validate">
+      </div>
+
+      <div class="input-field col s4">
+          <label for="id9"><b>concave_points3</b></label>
+          <br>
+        <input id="id9" name="concave_points3" type="text" class="validate">
+      </div>
+
+      <div class="input-field col s4">
+        <label for="id10"><b>concavity1</b></label>
+        <br>
+      <input   id="id10" name='concavity1'type="text" class="validate">
+      </div>
+
+      <div class="input-field col s4">
+        <label for="id11"><b>concavity2</b></label>
+          <br>
+        <input id="id11"  name="concavity2" type="text" class="validate">
+      </div>
+
+      <div class="input-field col s4">
+          <label for="id12"><b>concavity3</b></label>
+          <br>
+        <input id="id12" name="concavity3" type="text" class="validate">
+      </div>
+
+      <div class="input-field col s4">
+        <label for="id13"><b>fractal_dimension1</b></label>
+        <br>
+      <input   id="id13" name='fractal_dimension1'type="text" class="validate">
+      </div>
+
+      <div class="input-field col s4">
+        <label for="id14"><b>fractal_dimension2</b></label>
+          <br>
+        <input id="id14"  name="fractal_dimension2" type="text" class="validate">
+      </div>
+
+      <div class="input-field col s4">
+          <label for="id15"><b>fractal_dimension3</b></label>
+          <br>
+        <input id="id15" name="fractal_dimension3" type="text" class="validate">
+      </div>
+
+      <div class="input-field col s4">
+        <label for="id16"><b>perimeter1</b></label>
+        <br>
+      <input   id="id16" name='perimeter1'type="text" class="validate">
+      </div>
+
+      <div class="input-field col s4">
+        <label for="id17"><b>perimeter2</b></label>
+          <br>
+        <input id="id17"  name="perimeter2" type="text" class="validate">
+      </div>
+
+      <div class="input-field col s4">
+          <label for="id18"><b>perimeter3</b></label>
+          <br>
+        <input id="id18" name="perimeter3" type="text" class="validate">
+      </div>
+
+      <div class="input-field col s4">
+        <label for="id19"><b>radius1</b></label>
+        <br>
+      <input   id="id19" name='radius1'type="text" class="validate">
+      </div>
+
+      <div class="input-field col s4">
+        <label for="id20"><b>radius2</b></label>
+          <br>
+        <input id="id20"  name="radius2" type="text" class="validate">
+      </div>
+
+      <div class="input-field col s4">
+          <label for="id21"><b>radius3</b></label>
+          <br>
+        <input id="id21" name="radius3" type="text" class="validate">
+      </div>
+
+      <div class="input-field col s4">
+        <label for="id22"><b>smoothness1</b></label>
+        <br>
+      <input   id="id22" name='smoothness1'type="text" class="validate">
+      </div>
+
+      <div class="input-field col s4">
+        <label for="id23"><b>smoothness2</b></label>
+          <br>
+        <input id="id23"  name="smoothness2" type="text" class="validate">
+      </div>
+
+      <div class="input-field col s4">
+          <label for="id24"><b>smoothness3</b></label>
+          <br>
+        <input id="id24" name="smoothness3" type="text" class="validate">
+      </div>
+
+      <div class="input-field col s4">
+        <label for="id25"><b>symmetry1</b></label>
+        <br>
+        <input id="id25" name="symmetry1" type="text" class="validate">
+      </div>
+
+      <div class="input-field col s4">
+        <label for="id26"><b>symmetry2</b></label>
+        <br>
+        <input id="id26" name="symmetry2" type="text" class="validate">
+      </div>
+
+      <div class="input-field col s4">
+        <label for="id27"><b>symmetry3</b></label>
+        <br>
+        <input id="id27" name="symmetry3" type="text" class="validate">
+      </div>
+
+      <div class="input-field col s4">
+        <label for="id28"><b>texture1</b></label>
+        <br>
+        <input id="id28" name="texture1" type="text" class="validate">
+      </div>
+
+      <div class="input-field col s4">
+        <label for="id29"><b>texture2</b></label>
+        <br>
+        <input id="id29" name="texture2" type="text" class="validate">
+      </div>
+
+      <div class="input-field col s4">
+        <label for="id30"><b>texture3</b></label>
+        <br>
+        <input id="id30" name="texture3" type="text" class="validate">
+      </div>
+
+      </div>
+
+      <div class="row center">
+
+          <button type="submit" class="btn-large waves-effect waves-light orange" onclick="redirectToNextPage()">Predict</button>
+      </div>
+    </form>
+      </div>
+
+      <br><h4 align="center"<b>{{pred}}</b></h4>
+        <br>
+
+    </div>
+  </div>
+  <script>
+    function redirectToNextPage() {
+      // Redirect to the next page
+      window.location.href = 'results.html';
+    }
+  </script>
+
+  <div class="container">
+    <div class="section">
+
+      <!--   Icon Section   -->
+      <div class="row">
+        <div class="col s12 m4">
+          <div class="icon-block">
+            <h2 class="center light-blue-text"><i class="material-icons">flash_on</i></h2>
+            <h5 class="center">Breast Cancer Wisconsin (Diagnostic)</h5>
+
+            <p class="light">Features are computed from a digitized image of a fine needle aspirate (FNA) of a breast mass.  They describe characteristics of the cell nuclei present in the image. A few of the images can be found at <a href="http://www.cs.wisc.edu/~street/images/" target="_blank"> </a></p>
+          </div>
+              <button class="btn waves-effect waves-light" onclick="window.location.href='https://archive.ics.uci.edu/dataset/17/breast+cancer+wisconsin+diagnostic'" target="_blank" type="submit" name="action">Dataset
+    <i class="material-icons right">send</i>
+              </button>
+        </div>
+
+        <div class="col s12 m4">
+          <div class="icon-block">
+            <h2 class="center light-blue-text"><i class="material-icons">group</i></h2>
+            <h5 class="center">Additional Information</h5>
+
+            <p class="light">Dataset Characteristics : Multivariate<br>Subject Area : Health and Medicine<br>Associated Tasks : Classification<br>Feature Type : Real<br># Instances : 569<br># Features : 30<br></p>
+          </div>
+        </div>
+
+        <div class="col s12 m4">
+          <div class="icon-block">
+            <h2 class="center light-blue-text"><i class="material-icons">settings</i></h2>
+            <h5 class="center">Code</h5>
+
+            <p class="light">Code is avaialable at the following link.</p>
+          </div>
+        </div>
+
+              <button class="btn waves-effect waves-light" onclick="window.location.href='https://github.com/rizal-muhammed/Breast-Cancer-Detection'" target="_blank" type="submit" name="action">Code
+    <i class="material-icons right">send</i>
+              </button>
+      </div>
+
+    </div>
+    <br><br>
+  </div>
+  </div>>
+
+  <footer class="page-footer orange">
+    <div class="container">
+      <div class="row">
+        <div class="col l6 s12">
+          <h5 class="white-text">About</h5>
+          <p class="grey-text text-lighten-4">The above solves breast cancer classification with Machine Learning techniques. The dataset used for the problem is breast cancer wisconsin dataset. Various machine learning algorithms are used for performing the classification task.</p>
+
+
+        </div>
+        
+        <div class="col l3 s12">
+          <h5 class="white-text">Connect</h5>
+          <ul>
+            <li><a class="white-text" href="https://github.com/rizal-muhammed">github</a></li>
+            <li><a class="white-text" href="https://linkedin.com/in/rizal-muhammed-mp">linkedin</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="footer-copyright">
+      <div class="container">
+      Made by <a class="orange-text text-lighten-3" href="http://materializecss.com">Materialize</a>
+      </div>
+    </div>
+  </footer>
+
+
+  <!--  Scripts-->
+  <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+  <script src=".js/materialize.js"></script>
+  <script src="js/init.js"></script>
+
+  </body>
+</html>

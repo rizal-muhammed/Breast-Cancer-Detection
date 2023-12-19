@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0"/>
+  <title>Starter Template - Materialize</title>
+
+  <!-- CSS  -->
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link href="./static/css/materialize.css" type="text/css" rel="stylesheet" media="screen,projection"/>
+  <link href="./static/css2/style.css" type="text/css" rel="stylesheet" media="screen,projection"/>
+</head>
+
+<body>
+  <!-- <nav class="light-blue lighten-1" role="navigation">
+    <div class="nav-wrapper container"><a id="logo-container" href="#" class="brand-logo">Logo</a>
+      <ul class="right hide-on-med-and-down">
+        <li><a href="#">Navbar Link</a></li>
+      </ul>
+
+      <ul id="nav-mobile" class="sidenav">
+        <li><a href="#">Navbar Link</a></li>
+      </ul>
+      <a href="#" data-target="nav-mobile" class="sidenav-trigger"><i class="material-icons">menu</i></a>
+    </div>
+  </nav> -->
+
+
+  <div class="section no-pad-bot" id="index-banner">
+    <div class="container">
+      <br><br>
+      <h1 class="header center orange-text">Breast Cancer Detection Wisconsin</h1>
+      <div class="row center">
+        <h5 class="header col s12 light">Prediction of breast cancer.
+        <br>
+        </h5>
+      </div>
+    
+
+      <div class="row center">
+        <h1>Prediction: <span class='safe'>{{prediction}}</span></h1>
+      </div>
+
+
+      <br><h4 align="center"<b>{{pred}}</b></h4>
+        <br>
+
+    </div>
+  </div>
+
+
+  <div class="container">
+    <div class="section">
+
+      <!--   Icon Section   -->
+      <div class="row">
+        <div class="col s12 m4">
+          <div class="icon-block">
+            <h2 class="center light-blue-text"><i class="material-icons">flash_on</i></h2>
+            <h5 class="center">Breast Cancer Wisconsin (Diagnostic)</h5>
+
+            <p class="light">Features are computed from a digitized image of a fine needle aspirate (FNA) of a breast mass.  They describe characteristics of the cell nuclei present in the image. A few of the images can be found at <a href="http://www.cs.wisc.edu/~street/images/" target="_blank"> </a></p>
+          </div>
+              <button class="btn waves-effect waves-light" onclick="window.location.href='https://archive.ics.uci.edu/dataset/17/breast+cancer+wisconsin+diagnostic'" target="_blank" type="submit" name="action">Dataset
+    <i class="material-icons right">send</i>
+              </button>
+        </div>
+
+        <div class="col s12 m4">
+          <div class="icon-block">
+            <h2 class="center light-blue-text"><i class="material-icons">group</i></h2>
+            <h5 class="center">Additional Information</h5>
+
+            <p class="light">Dataset Characteristics : Multivariate<br>Subject Area : Health and Medicine<br>Associated Tasks : Classification<br>Feature Type : Real<br># Instances : 569<br># Features : 30<br></p>
+          </div>
+        </div>
+
+        <div class="col s12 m4">
+          <div class="icon-block">
+            <h2 class="center light-blue-text"><i class="material-icons">settings</i></h2>
+            <h5 class="center">Code</h5>
+
+            <p class="light">Code is avaialable at the following link.</p>
+          </div>
+        </div>
+
+              <button class="btn waves-effect waves-light" onclick="window.location.href='https://github.com/rizal-muhammed/Breast-Cancer-Detection'" target="_blank" type="submit" name="action">Code
+    <i class="material-icons right">send</i>
+              </button>
+      </div>
+
+    </div>
+    <br><br>
+  </div>
+  </div>>
+
+  <footer class="page-footer orange">
+    <div class="container">
+      <div class="row">
+        <div class="col l6 s12">
+          <h5 class="white-text">About</h5>
+          <p class="grey-text text-lighten-4">The above solves breast cancer classification with Machine Learning techniques. The dataset used for the problem is breast cancer wisconsin dataset. Various machine learning algorithms are used for performing the classification task.</p>
+
+
+        </div>
+        
+        <div class="col l3 s12">
+          <h5 class="white-text">Connect</h5>
+          <ul>
+            <li><a class="white-text" href="https://github.com/rizal-muhammed">github</a></li>
+            <li><a class="white-text" href="https://linkedin.com/in/rizal-muhammed-mp">linkedin</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="footer-copyright">
+      <div class="container">
+      Made by <a class="orange-text text-lighten-3" href="http://materializecss.com">Materialize</a>
+      </div>
+    </div>
+  </footer>
+
+
+  <!--  Scripts-->
+  <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+  <script src=".js/materialize.js"></script>
+  <script src="js/init.js"></script>
+
+  </body>
+</html>
