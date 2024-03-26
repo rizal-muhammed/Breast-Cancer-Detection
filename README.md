@@ -25,3 +25,5 @@ pip install requirements.txt
 6. Update the components
 7. Update the pipeline
 8. Test run pipeline stage
+
+For video explanation, please refer [here](https://youtu.be/7iw1l0jxAmI)
